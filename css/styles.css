@@ -513,8 +513,12 @@ section.customers {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  min-width: 408px;
-  min-height: 576px;
+  width: 408px;
+  height: 576px;
+  padding-top: 72px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   background: var(--modal-background-dairy);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -558,6 +562,105 @@ section.customers {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal .title {
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  /* letter-spacing: 0.02em; */
+  color: var(--dark-navy-blue);
+}
+
+.modal .form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 8px; */
+}
+
+.modal .label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--text-slate);
+}
+
+.modal .input-wrap {
+  position: relative;
+}
+
+.modal .input {
+  width: 100%;
+  min-height: 40px;
+  padding-left: 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal .input:hover,
+.modal .input:focus {
+  border-color: var(--primary-brand-iris);
+}
+.modal .input:hover + .icon-input,
+.modal .input:focus + .icon-input {
+  fill: var(--primary-brand-iris);
+}
+
+.modal .icon-input {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal .input.comment {
+  min-height: 120px;
+  padding-left: 16px;
+}
+
+.modal .btn-send {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+  background-color: var(--primary-brand-iris);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal .btn-send:hover,
+.modal .btn-send:focus {
+  background-color: var(--pressed-state-ocean);
+}
+
+.modal .label-checkbox {
+  padding-top: 8px;
+  padding-bottom: 24px;
+  gap: 0;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--text-slate);
+}
+
+.modal .link-checkbox {
+  text-decoration: underline;
+  color: var(--primary-brand-iris);
+  cursor: pointer;
+}
 /**
 	|============================
 	| Portfolio page
