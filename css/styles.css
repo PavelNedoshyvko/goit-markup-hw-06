@@ -57,6 +57,10 @@ body {
   display: block;
 }
 
+.input {
+  padding: 0;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -238,7 +242,6 @@ body {
 .hero .btn:hover,
 .hero .btn:focus {
   background-color: var(--pressed-state-ocean);
-  /* cursor: pointer; */
 }
 
 /* SECTION Features */
@@ -446,6 +449,10 @@ section.customers {
   width: 264px;
 }
 
+.footer .social-media {
+  margin-right: 80px;
+}
+
 .footer .social-title {
   margin-top: 0;
   margin-bottom: 16px;
@@ -485,6 +492,71 @@ section.customers {
 
 .footer .icon {
   fill: var(--light-cloud);
+}
+
+.form-subscribe .label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-background);
+}
+
+.footer .btn-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 165px;
+  height: 40px;
+  padding: 8px 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+  background-color: var(--primary-brand-iris);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer .btn-subscribe:hover,
+.footer .btn-subscribe:focus {
+  background-color: var(--pressed-state-ocean);
+}
+
+.form-subscribe .input {
+  width: 264px;
+  height: 40px;
+  padding-left: 16px;
+  border: 1px solid var(--white-background);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+}
+
+.form-subscribe .input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+}
+
+.form-subscribe .label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.div-inner {
+  display: flex;
+  gap: 24px;
 }
 
 /* Modal */
@@ -563,7 +635,7 @@ section.customers {
 }
 
 .modal .title {
-  padding-bottom: 16px;
+  margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -578,54 +650,62 @@ section.customers {
   /* gap: 8px; */
 }
 
-.modal .label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-bottom: 8px;
+.form .label {
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: var(--text-slate);
+  letter-spacing: 0.01em;
+  color: var(--subtle-text-light-slate);
 }
 
-.modal .input-wrap {
-  position: relative;
-}
-
-.modal .input {
+.form .input {
   width: 100%;
   min-height: 40px;
   padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  outline: none;
+  outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .input:hover,
-.modal .input:focus {
+.form .input:hover,
+.form .input:focus {
   border-color: var(--primary-brand-iris);
 }
-.modal .input:hover + .icon-input,
-.modal .input:focus + .icon-input {
-  fill: var(--primary-brand-iris);
+.form .input:hover + .icon-input,
+.form .input:focus + .icon-input {
+  color: var(--primary-brand-iris);
 }
 
-.modal .icon-input {
+.form-input-wrap {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.form .icon-input {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--dark-navy-blue);
+  fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .input.comment {
+.form .input.comment {
   min-height: 120px;
   padding-left: 16px;
+  margin-bottom: 16px;
 }
 
-.modal .btn-send {
+.form .input.comment::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.form .btn-send {
   margin-left: auto;
   margin-right: auto;
   min-width: 169px;
@@ -641,26 +721,60 @@ section.customers {
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal .btn-send:hover,
-.modal .btn-send:focus {
+.form .btn-send:hover,
+.form .btn-send:focus {
   background-color: var(--pressed-state-ocean);
 }
 
-.modal .label-checkbox {
-  padding-top: 8px;
-  padding-bottom: 24px;
+.form .label-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
   gap: 0;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--text-slate);
+  color: var(--subtle-text-light-slate);
 }
 
-.modal .link-checkbox {
+.form .input-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form .icon-checkbox-default {
+  color: transparent;
+  fill: currentColor;
+  stroke: rgba(46, 47, 66, 0.4);
+}
+
+.form .icon-checkbox-click {
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form .input-checkbox:checked + .icon-checkbox .icon-checkbox-click {
+  opacity: 1;
+}
+
+.form .link-checkbox {
   text-decoration: underline;
   color: var(--primary-brand-iris);
   cursor: pointer;
 }
+
+.form .icon-checkbox {
+  margin-right: 8px;
+}
+
 /**
 	|============================
 	| Portfolio page
